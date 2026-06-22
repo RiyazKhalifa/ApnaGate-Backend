@@ -1,0 +1,21 @@
+const path = require('path');
+const i18next = require('i18next');
+const Backend = require('i18next-fs-backend');
+const middleware = require('i18next-http-middleware');
+
+i18next
+    .use(Backend)
+    .use(middleware.LanguageDetector)
+    .init({
+        fallbackLng: 'en',
+        preload: ['en', 'ar'],
+        backend: {
+            loadPath: path.join(__dirname, '../locales/{{lng}}/translation.json')
+        },
+        detection: {
+            order: ['header'],
+            caches: []
+        }
+    });
+
+module.exports = { i18next, middleware };
