@@ -5,7 +5,7 @@ class CommonValidator {
         body('module')
             .notEmpty().withMessage((value, { req }) => req.t("validation.module_required"))
             .bail()
-            .isIn(['user', 'faq', 'role', 'contact', 'society', 'society_role', 'society_user']).withMessage((value, { req }) => req.t("validation.invalid_module")),
+            .isIn(['user', 'faq', 'role', 'contact', 'society', 'society_role', 'society_user', 'block', 'tower', 'floor', 'flat']).withMessage((value, { req }) => req.t("validation.invalid_module")),
 
         body('id')
             .notEmpty().withMessage((value, { req }) => req.t("validation.id_required"))
@@ -15,14 +15,14 @@ class CommonValidator {
         body('status')
             .notEmpty().withMessage((value, { req }) => req.t("validation.status_required"))
             .bail()
-            .isIn(['active', 'inactive', 'pending', 'suspended']).withMessage((value, { req }) => req.t("validation.invalid_status"))
+            .isIn(['active', 'inactive', 'pending', 'suspended', 'occupied', 'vacant', 'maintenance']).withMessage((value, { req }) => req.t("validation.invalid_status"))
     ];
 
     static deleteValidator = [
         body('module')
             .notEmpty().withMessage((value, { req }) => req.t("validation.module_required"))
             .bail()
-            .isIn(['user', 'faq', 'role', 'permission', 'contact', 'society', 'society_role', 'society_user']).withMessage((value, { req }) => req.t("validation.invalid_module")),
+            .isIn(['user', 'faq', 'role', 'permission', 'contact', 'society', 'society_role', 'society_user', 'block', 'tower', 'floor', 'flat']).withMessage((value, { req }) => req.t("validation.invalid_module")),
 
         body('id')
             .notEmpty().withMessage((value, { req }) => req.t("validation.id_required"))

@@ -11,6 +11,10 @@ const getModel = (module) => {
         society: db.Society,
         society_role: db.SocietyRole,
         society_user: db.SocietyUser,
+        block: db.Block,
+        tower: db.Tower,
+        floor: db.Floor,
+        flat: db.Flat,
     };
     return modelMap[module];
 };

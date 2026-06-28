@@ -55,7 +55,27 @@ module.exports = {
             { name: 'society_user.view', name_ar: 'عرض مستخدم الجمعية' },
             { name: 'society_user.create', name_ar: 'إنشاء مستخدم جمعية' },
             { name: 'society_user.update', name_ar: 'تحديث مستخدم الجمعية' },
-            { name: 'society_user.delete', name_ar: 'حذف مستخدم الجمعية' }
+            { name: 'society_user.delete', name_ar: 'حذف مستخدم الجمعية' },
+            { name: 'block.list', name_ar: 'قائمة البلوكات' },
+            { name: 'block.view', name_ar: 'عرض البلوك' },
+            { name: 'block.create', name_ar: 'إنشاء بلوك' },
+            { name: 'block.update', name_ar: 'تحديث بلوك' },
+            { name: 'block.delete', name_ar: 'حذف بلوك' },
+            { name: 'tower.list', name_ar: 'قائمة الأبراج' },
+            { name: 'tower.view', name_ar: 'عرض البرج' },
+            { name: 'tower.create', name_ar: 'إنشاء برج' },
+            { name: 'tower.update', name_ar: 'تحديث برج' },
+            { name: 'tower.delete', name_ar: 'حذف برج' },
+            { name: 'floor.list', name_ar: 'قائمة الطوابق' },
+            { name: 'floor.view', name_ar: 'عرض الطابق' },
+            { name: 'floor.create', name_ar: 'إنشاء طابق' },
+            { name: 'floor.update', name_ar: 'تحديث طابق' },
+            { name: 'floor.delete', name_ar: 'حذف طابق' },
+            { name: 'flat.list', name_ar: 'قائمة الشقق' },
+            { name: 'flat.view', name_ar: 'عرض الشقة' },
+            { name: 'flat.create', name_ar: 'إنشاء شقة' },
+            { name: 'flat.update', name_ar: 'تحديث شقة' },
+            { name: 'flat.delete', name_ar: 'حذف شقة' }
         ];
 
         for (const permission of permissions) {

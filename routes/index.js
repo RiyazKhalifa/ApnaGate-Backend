@@ -17,6 +17,10 @@ const notificationRoutes = require("./NotificationRoutes");
 const societyRoutes = require("./SocietyRoutes");
 const societyRoleRoutes = require("./SocietyRoleRoutes");
 const societyUserRoutes = require("./SocietyUserRoutes");
+const blockRoutes = require("./BlockRoutes");
+const towerRoutes = require("./TowerRoutes");
+const floorRoutes = require("./FloorRoutes");
+const flatRoutes = require("./FlatRoutes");
 
 router.use("/auth", authRoutes);
 router.use("/profile", profileRoutes);
@@ -34,5 +38,9 @@ router.use("/notifications", notificationRoutes);
 router.use("/societies", societyRoutes);
 router.use("/society-roles", societyRoleRoutes);
 router.use("/society-users", societyUserRoutes);
+router.use("/blocks", blockRoutes);
+router.use("/towers", towerRoutes);
+router.use("/floors", floorRoutes);
+router.use("/flats", flatRoutes);
 
 module.exports = router;
