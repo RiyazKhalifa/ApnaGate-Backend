@@ -14,6 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     Permission.init({
+        module: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        action: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         name: {
             type: DataTypes.STRING,
             allowNull: false

@@ -1,0 +1,91 @@
+'use strict';
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+    async up(queryInterface, Sequelize) {
+        await queryInterface.createTable('residents', {
+            id: {
+                allowNull: false,
+                autoIncrement: true,
+                primaryKey: true,
+                type: Sequelize.BIGINT
+            },
+            user_id: {
+                type: Sequelize.BIGINT,
+                allowNull: true,
+                references: {
+                    model: 'users',
+                    key: 'id'
+                },
+                onUpdate: 'CASCADE',
+                onDelete: 'SET NULL'
+            },
+            society_id: {
+                type: Sequelize.BIGINT,
+                allowNull: false,
+                references: {
+                    model: 'societies',
+                    key: 'id'
+                },
+                onUpdate: 'CASCADE',
+                onDelete: 'CASCADE'
+            },
+            flat_id: {
+                type: Sequelize.BIGINT,
+                allowNull: false,
+                references: {
+                    model: 'flats',
+                    key: 'id'
+                },
+                onUpdate: 'CASCADE',
+                onDelete: 'CASCADE'
+            },
+            resident_type: {
+                type: Sequelize.ENUM('owner', 'tenant'),
+                allowNull: false
+            },
+            move_in_date: {
+                type: Sequelize.DATEONLY,
+                allowNull: false
+            },
+            move_out_date: {
+                type: Sequelize.DATEONLY,
+                allowNull: true
+            },
+            phone: {
+                type: Sequelize.STRING,
+                allowNull: true
+            },
+            emergency_contact: {
+                type: Sequelize.STRING,
+                allowNull: true
+            },
+            occupation: {
+                type: Sequelize.STRING,
+                allowNull: true
+            },
+            status: {
+                type: Sequelize.ENUM('active', 'inactive'),
+                allowNull: false,
+                defaultValue: 'active'
+            },
+            created_at: {
+                allowNull: false,
+                type: Sequelize.DATE,
+                defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+            },
+            updated_at: {
+                allowNull: false,
+                type: Sequelize.DATE,
+                defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP')
+            },
+            deleted_at: {
+                type: Sequelize.DATE,
+                allowNull: true
+            }
+        });
+    },
+
+    async down(queryInterface, Sequelize) {
+        await queryInterface.dropTable('residents');
+    }
+};

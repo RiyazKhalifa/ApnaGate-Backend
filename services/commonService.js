@@ -7,8 +7,10 @@ const getModel = (module) => {
         faq: db.Faq,
         role: db.Role,
         permission: db.Permission,
-        customer: db.Customer,
         contact: db.ContactUs,
+        society: db.Society,
+        society_role: db.SocietyRole,
+        society_user: db.SocietyUser,
     };
     return modelMap[module];
 };

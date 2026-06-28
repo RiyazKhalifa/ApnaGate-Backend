@@ -7,14 +7,15 @@ module.exports = {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
-                type: Sequelize.INTEGER
+                type: Sequelize.BIGINT
             },
             name: {
                 type: Sequelize.STRING
             },
             email: {
                 type: Sequelize.STRING,
-                allowNull: false
+                allowNull: false,
+                unique: true
             },
             password: {
                 type: Sequelize.STRING
@@ -28,6 +29,10 @@ module.exports = {
                 allowNull: false,
                 defaultValue: 'active',
             },
+            last_login_at: {
+                type: Sequelize.DATE,
+                allowNull: true,
+            },
             reset_password_token: {
                 type: Sequelize.STRING,
                 allowNull: true,
@@ -37,7 +42,7 @@ module.exports = {
                 allowNull: true,
             },
             role_id: {
-                type: Sequelize.INTEGER,
+                type: Sequelize.BIGINT,
                 allowNull: false,
                 references: {
                     model: 'roles',

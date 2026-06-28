@@ -4,13 +4,13 @@ module.exports = {
     async up(queryInterface, Sequelize) {
         await queryInterface.createTable('role_permissions', {
             id: {
-                type: Sequelize.INTEGER,
+                type: Sequelize.BIGINT,
                 autoIncrement: true,
                 primaryKey: true,
                 allowNull: false,
             },
             role_id: {
-                type: Sequelize.INTEGER,
+                type: Sequelize.BIGINT,
                 allowNull: false,
                 references: {
                     model: "roles",
@@ -20,7 +20,7 @@ module.exports = {
                 onUpdate: 'CASCADE',
             },
             permission_id: {
-                type: Sequelize.INTEGER,
+                type: Sequelize.BIGINT,
                 allowNull: false,
                 references: {
                     model: 'permissions',

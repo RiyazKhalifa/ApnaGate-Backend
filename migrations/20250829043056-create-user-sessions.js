@@ -8,23 +8,13 @@ module.exports = {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
-                type: Sequelize.INTEGER,
+                type: Sequelize.BIGINT,
             },
             user_id: {
-                type: Sequelize.INTEGER,
+                type: Sequelize.BIGINT,
                 allowNull: true,
                 references: {
                     model: 'users',
-                    key: 'id',
-                },
-                onDelete: 'CASCADE',
-                onUpdate: 'CASCADE',
-            },
-            customer_id: {
-                type: Sequelize.INTEGER,
-                allowNull: true,
-                references: {
-                    model: 'customers',
                     key: 'id',
                 },
                 onDelete: 'CASCADE',

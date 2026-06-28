@@ -12,6 +12,18 @@
         "name_min_length": "يجب أن يكون الاسم حرفين على الأقل",
         "name_ar_required": "الاسم بالعربية مطلوب",
         "name_ar_min_length": "يجب أن يكون الاسم بالعربية حرفين على الأقل",
+        "society_name_required": "اسم الجمعية مطلوب",
+        "society_name_min_length": "يجب أن يكون اسم الجمعية حرفين على الأقل",
+        "society_name_ar_required": "الاسم بالعربية للجمعية مطلوب",
+        "society_name_ar_min_length": "يجب أن يكون الاسم بالعربية للجمعية حرفين على الأقل",
+        "invalid_society_id": "معرف الجمعية غير صالح",
+        "phone_required": "رقم الهاتف مطلوب",
+        "phone_must_be_string": "يجب أن يكون رقم الهاتف نصًا",
+        "address_required": "العنوان مطلوب",
+        "city_required": "المدينة مطلوبة",
+        "district_required": "الحي مطلوب",
+        "state_required": "الولاية/المقاطعة مطلوبة",
+        "country_required": "البلد مطلوب",
         "current_password_required": "كلمة المرور الحالية مطلوبة",
         "confirm_password_required": "تأكيد كلمة المرور مطلوب",
         "passwords_not_match": "كلمات المرور غير متطابقة",
@@ -54,7 +66,10 @@
         "id_required": "المعرف مطلوب",
         "id_must_be_number": "يجب أن يكون المعرف رقمًا",
         "invalid_module": "الوحدة غير صالحة",
-        "app_settings_must_be_object": "يجب أن تكون إعدادات التطبيق كائنًا"
+        "app_settings_must_be_object": "يجب أن تكون إعدادات التطبيق كائنًا",
+        "society_id_required": "معرف الجمعية مطلوب",
+        "description_must_be_string": "يجب أن يكون الوصف نصاً",
+        "invalid_permission_keys": "مفاتيح الصلاحيات غير صالحة"
     },
     "messages": {
         "login_success": "تم تسجيل الدخول بنجاح",
@@ -72,6 +87,11 @@
         "user_created": "تم إنشاء المستخدم بنجاح",
         "user_updated": "تم تحديث المستخدم بنجاح",
         "user_deleted": "تم حذف المستخدم بنجاح",
+        "societies_retrieved": "تم استرداد الجمعيات بنجاح",
+        "society_retrieved": "تم استرداد الجمعية بنجاح",
+        "society_created": "تم إنشاء الجمعية بنجاح",
+        "society_updated": "تم تحديث الجمعية بنجاح",
+        "society_deleted": "تم حذف الجمعية بنجاح",
         "roles_retrieved": "تم استرداد الأدوار بنجاح",
         "permissions_retrieved": "تم استرداد الصلاحيات بنجاح",
         "role_created": "تم إنشاء الدور بنجاح",
@@ -98,7 +118,12 @@
         "site_settings_updated": "تم تحديث إعدادات الموقع بنجاح",
         "status_updated": "تم تحديث الحالة بنجاح",
         "sequence_updated": "تم تحديث التسلسل بنجاح",
-        "app_settings_updated": "تم تحديث إعدادات التطبيق بنجاح"
+        "app_settings_updated": "تم تحديث إعدادات التطبيق بنجاح",
+        "society_role_created": "تم إنشاء دور الجمعية بنجاح",
+        "society_roles_retrieved": "تم استرداد أدوار الجمعية بنجاح",
+        "society_role_retrieved": "تم استرداد دور الجمعية بنجاح",
+        "society_role_updated": "تم تحديث دور الجمعية بنجاح",
+        "society_role_deleted": "تم حذف دور الجمعية بنجاح"
     },
     "errors": {
         "invalid_password": "كلمة المرور غير صحيحة",
@@ -121,11 +146,14 @@
         "permission_already_exists": "الصلاحية موجودة بالفعل",
         "permission_not_found": "الصلاحية غير موجودة",
         "invalid_role": "دور غير صالح",
+        "society_not_found": "الجمعية غير موجودة",
         "customer_not_found": "العميل غير موجود",
         "invalid_status": "الحالة غير صالحة",
         "cms_not_found": "محتوى CMS غير موجود",
         "cms_slug_already_exists": "رابط CMS المختصر موجود بالفعل",
         "faq_not_found": "السؤال الشائع غير موجود",
-        "invalid_site_key": "مفتاح الموقع غير صالح"
+        "invalid_site_key": "مفتاح الموقع غير صالح",
+        "society_role_already_exists": "دور الجمعية موجود بالفعل",
+        "society_role_not_found": "دور الجمعية غير موجود"
     }
 }

@@ -1,26 +1,20 @@
-"use strict";
-
+'use strict';
+/** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface, Sequelize) {
-        await queryInterface.createTable("notifications", {
+        await queryInterface.createTable('notifications', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
-                type: Sequelize.INTEGER
+                type: Sequelize.BIGINT
             },
-            customer_id: {
-                type: Sequelize.INTEGER,
-                allowNull: false,
-                references: {
-                    model: "customers",
-                    key: "id"
-                },
-                onUpdate: "CASCADE",
-                onDelete: "CASCADE"
+            recipient_type: {
+                type: Sequelize.ENUM('user', 'society_user', 'resident'),
+                allowNull: false
             },
-            type: {
-                type: Sequelize.ENUM("admin", "customer"),
+            recipient_id: {
+                type: Sequelize.BIGINT,
                 allowNull: false
             },
             title: {
@@ -31,31 +25,32 @@ module.exports = {
                 type: Sequelize.TEXT,
                 allowNull: false
             },
+            type: {
+                type: Sequelize.STRING,
+                allowNull: false
+            },
             is_read: {
                 type: Sequelize.BOOLEAN,
+                allowNull: false,
                 defaultValue: false
             },
             created_at: {
                 allowNull: false,
-                type: Sequelize.DATE
+                type: Sequelize.DATE,
+                defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
             },
             updated_at: {
                 allowNull: false,
-                type: Sequelize.DATE
-            },
-            deleted_at: {
-                type: Sequelize.DATE
+                type: Sequelize.DATE,
+                defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP')
             }
         });
 
-        // Add index for customer_id and is_read for performance
-        await queryInterface.addIndex("notifications", ["customer_id", "is_read"]);
+        // Add index on recipient_type and recipient_id for polymorphic queries
+        await queryInterface.addIndex('notifications', ['recipient_type', 'recipient_id']);
     },
 
     async down(queryInterface, Sequelize) {
-        await queryInterface.dropTable("notifications");
-        // ENUM types might need explicit dropping in some dialects like Postgres, 
-        // but for MySQL/SQLite it's usually fine. 
-        // Sequelize often handles this or it's not needed.
+        await queryInterface.dropTable('notifications');
     }
 };

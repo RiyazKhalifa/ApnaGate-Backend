@@ -17,8 +17,11 @@ module.exports = {
             { name: 'role.delete', name_ar: 'حذف الدور' },
             { name: 'profile.view', name_ar: 'عرض الملف الشخصي' },
             { name: 'profile.update', name_ar: 'تحديث الملف الشخصي' },
-            { name: 'customer.list', name_ar: 'قائمة العملاء' },
-            { name: 'customer.view', name_ar: 'عرض العميل' },
+            { name: 'society.list', name_ar: 'قائمة الجمعيات' },
+            { name: 'society.view', name_ar: 'عرض الجمعية' },
+            { name: 'society.create', name_ar: 'إنشاء جمعية' },
+            { name: 'society.update', name_ar: 'تحديث الجمعية' },
+            { name: 'society.delete', name_ar: 'حذف الجمعية' },
             { name: 'cms.list', name_ar: 'قائمة CMS' },
             { name: 'cms.view', name_ar: 'منظر CMS' },
             { name: 'cms.update', name_ar: 'تحديث CMS' },
@@ -42,13 +45,31 @@ module.exports = {
             { name: 'contact.view', name_ar: 'عرض جهة الاتصال' },
             { name: 'contact.reply', name_ar: 'الرد على جهة الاتصال' },
             { name: 'contact.delete', name_ar: 'حذف جهة الاتصال' },
-            { name: 'notification.list', name_ar: 'قائمة الإشعارات' }
+            { name: 'notification.list', name_ar: 'قائمة الإشعارات' },
+            { name: 'society_role.list', name_ar: 'قائمة أدوار الجمعية' },
+            { name: 'society_role.view', name_ar: 'عرض دور الجمعية' },
+            { name: 'society_role.create', name_ar: 'إنشاء دور جمعية' },
+            { name: 'society_role.update', name_ar: 'تحديث دور جمعية' },
+            { name: 'society_role.delete', name_ar: 'حذف دور جمعية' },
+            { name: 'society_user.list', name_ar: 'قائمة مستخدمي الجمعية' },
+            { name: 'society_user.view', name_ar: 'عرض مستخدم الجمعية' },
+            { name: 'society_user.create', name_ar: 'إنشاء مستخدم جمعية' },
+            { name: 'society_user.update', name_ar: 'تحديث مستخدم الجمعية' },
+            { name: 'society_user.delete', name_ar: 'حذف مستخدم الجمعية' }
         ];
 
         for (const permission of permissions) {
+            const parts = permission.name.split('.');
+            const module = parts[0];
+            const action = parts.slice(1).join('.');
             await Permission.findOrCreate({
                 where: { name: permission.name },
-                defaults: permission
+                defaults: {
+                    name: permission.name,
+                    name_ar: permission.name_ar,
+                    module: module,
+                    action: action
+                }
             });
         }
 

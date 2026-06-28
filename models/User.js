@@ -46,6 +46,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.ENUM('active', 'inactive'),
             defaultValue: 'active'
         },
+        lastLoginAt: {
+            type: DataTypes.DATE,
+            field: 'last_login_at'
+        },
         reset_password_token: {
             type: DataTypes.STRING
         },
@@ -53,7 +57,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE
         },
         roleId: {
-            type: DataTypes.INTEGER
+            type: DataTypes.BIGINT,
+            field: 'role_id'
         }
     }, {
         sequelize,

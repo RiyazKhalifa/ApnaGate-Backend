@@ -12,6 +12,18 @@
         "name_min_length": "Name must be at least 2 characters long",
         "name_ar_required": "Arabic name is required",
         "name_ar_min_length": "Arabic name must be at least 2 characters long",
+        "society_name_required": "Society name is required",
+        "society_name_min_length": "Society name must be at least 2 characters long",
+        "society_name_ar_required": "Arabic society name is required",
+        "society_name_ar_min_length": "Arabic society name must be at least 2 characters long",
+        "invalid_society_id": "Invalid society ID",
+        "phone_required": "Phone number is required",
+        "phone_must_be_string": "Phone number must be a string",
+        "address_required": "Address is required",
+        "city_required": "City is required",
+        "district_required": "District is required",
+        "state_required": "State is required",
+        "country_required": "Country is required",
         "current_password_required": "Current password is required",
         "confirm_password_required": "Confirm password is required",
         "passwords_not_match": "Passwords do not match",
@@ -57,7 +69,10 @@
         "app_settings_must_be_object": "Application settings must be an object",
         "customer_id_required": "Customer is required",
         "message_required": "Message is required",
-        "invalid_type": "Invalid notification type"
+        "invalid_type": "Invalid notification type",
+        "society_id_required": "Society ID is required",
+        "description_must_be_string": "Description must be a string",
+        "invalid_permission_keys": "Invalid permission keys"
     },
     "messages": {
         "login_success": "Login successful",
@@ -75,6 +90,11 @@
         "user_created": "User created successfully",
         "user_updated": "User updated successfully",
         "user_deleted": "User deleted successfully",
+        "societies_retrieved": "Societies retrieved successfully",
+        "society_retrieved": "Society retrieved successfully",
+        "society_created": "Society created successfully",
+        "society_updated": "Society updated successfully",
+        "society_deleted": "Society deleted successfully",
         "roles_retrieved": "Roles retrieved successfully",
         "permissions_retrieved": "Permissions retrieved successfully",
         "role_created": "Role created successfully",
@@ -104,7 +124,12 @@
         "app_settings_updated": "Application settings updated successfully",
         "notifications_retrieved": "Notifications retrieved successfully",
         "notification_created": "Notification sent successfully",
-        "notification_deleted": "Notification deleted successfully"
+        "notification_deleted": "Notification deleted successfully",
+        "society_role_created": "Society role created successfully",
+        "society_roles_retrieved": "Society roles retrieved successfully",
+        "society_role_retrieved": "Society role retrieved successfully",
+        "society_role_updated": "Society role updated successfully",
+        "society_role_deleted": "Society role deleted successfully"
     },
     "errors": {
         "invalid_password": "Invalid password",
@@ -127,12 +152,15 @@
         "permission_already_exists": "Permission already exists",
         "permission_not_found": "Permission not found",
         "invalid_role": "Invalid role",
+        "society_not_found": "Society not found",
         "customer_not_found": "Customer not found",
         "invalid_status": "Invalid status",
         "cms_not_found": "CMS content not found",
         "cms_slug_already_exists": "CMS slug already exists",
         "faq_not_found": "FAQ not found",
         "invalid_site_key": "Invalid site key",
-        "notification_not_found": "Notification not found"
+        "notification_not_found": "Notification not found",
+        "society_role_already_exists": "Society role already exists",
+        "society_role_not_found": "Society role not found"
     }
 }

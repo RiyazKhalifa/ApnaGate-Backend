@@ -1,50 +1,48 @@
-"use strict";
-const { Model } = require("sequelize");
+'use strict';
+const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
     class Notification extends Model {
         static associate(models) {
-            this.belongsTo(models.Customer, {
-                foreignKey: "customerId",
-                as: "customer"
-            });
+            // Polymorphic associations can be defined here if needed, 
+            // but standard Sequelize polymorphic belongsTo is handled dynamically or via hooks.
         }
     }
-    Notification.init(
-        {
-            customerId: {
-                type: DataTypes.INTEGER,
-                allowNull: false,
-                field: "customer_id"
-            },
-            type: {
-                type: DataTypes.ENUM("admin", "customer"),
-                allowNull: false
-            },
-            title: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            message: {
-                type: DataTypes.TEXT,
-                allowNull: false
-            },
-            is_read: {
-                type: DataTypes.BOOLEAN,
-                defaultValue: false
-            }
+
+    Notification.init({
+        recipient_type: {
+            type: DataTypes.ENUM('user', 'society_user', 'resident'),
+            allowNull: false
         },
-        {
-            sequelize,
-            modelName: "Notification",
-            tableName: "notifications",
-            underscored: true,
-            timestamps: true,
-            paranoid: true,
-            createdAt: "created_at",
-            updatedAt: "updated_at",
-            deletedAt: "deleted_at"
+        recipient_id: {
+            type: DataTypes.BIGINT,
+            allowNull: false
+        },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        message: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        type: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        is_read: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         }
-    );
+    }, {
+        sequelize,
+        modelName: 'Notification',
+        tableName: 'notifications',
+        underscored: true,
+        timestamps: true,
+        paranoid: false
+    });
+
     return Notification;
 };

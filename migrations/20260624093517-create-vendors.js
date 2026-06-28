@@ -2,41 +2,41 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface, Sequelize) {
-        await queryInterface.createTable('customers', {
+        await queryInterface.createTable('vendors', {
             id: {
-                type: Sequelize.INTEGER,
+                allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
-                allowNull: false,
+                type: Sequelize.BIGINT
             },
             name: {
-                type: Sequelize.STRING
+                type: Sequelize.STRING,
+                allowNull: false
             },
             email: {
                 type: Sequelize.STRING,
-            },
-            password: {
-                type: Sequelize.STRING
+                allowNull: true
             },
             phone: {
-                type: Sequelize.STRING
-            },
-            profile_image: {
                 type: Sequelize.STRING,
-                allowNull: true,
+                allowNull: true
+            },
+            service_type: {
+                type: Sequelize.STRING,
+                allowNull: true
+            },
+            gst_number: {
+                type: Sequelize.STRING,
+                allowNull: true
+            },
+            address: {
+                type: Sequelize.TEXT,
+                allowNull: true
             },
             status: {
                 type: Sequelize.ENUM('active', 'inactive'),
                 allowNull: false,
-                defaultValue: 'active',
-            },
-            reset_password_token: {
-                type: Sequelize.STRING,
-                allowNull: true,
-            },
-            reset_password_expires: {
-                type: Sequelize.DATE,
-                allowNull: true,
+                defaultValue: 'active'
             },
             created_at: {
                 allowNull: false,
@@ -49,12 +49,13 @@ module.exports = {
                 defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP')
             },
             deleted_at: {
-                allowNull: true,
-                type: Sequelize.DATE
+                type: Sequelize.DATE,
+                allowNull: true
             }
         });
     },
+
     async down(queryInterface, Sequelize) {
-        await queryInterface.dropTable('customers');
+        await queryInterface.dropTable('vendors');
     }
 };

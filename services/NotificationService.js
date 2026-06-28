@@ -1,6 +1,6 @@
 "use strict";
 
-const { Notification, Customer } = require("../models");
+const { Notification } = require("../models");
 
 class NotificationService {
     static async list(params = {}) {
@@ -13,17 +13,9 @@ class NotificationService {
 
         const { count, rows } = await Notification.findAndCountAll({
             where,
-            include: [
-                {
-                    model: Customer,
-                    as: "customer",
-                    attributes: ["id", "name", "email"]
-                }
-            ],
             order: [["created_at", "DESC"]],
             limit: parseInt(limit),
-            offset: parseInt(offset),
-            paranoid: true
+            offset: parseInt(offset)
         });
 
         return {
@@ -34,11 +26,8 @@ class NotificationService {
                 current_page: parseInt(page),
                 notifications: rows.map(item => ({
                     id: item.id,
-                    customer: item.customer ? {
-                        id: item.customer.id,
-                        name: item.customer.name,
-                        email: item.customer.email
-                    } : null,
+                    recipient_type: item.recipient_type,
+                    recipient_id: item.recipient_id,
                     type: item.type,
                     title: item.title,
                     message: item.message,

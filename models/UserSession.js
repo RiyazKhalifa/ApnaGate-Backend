@@ -11,24 +11,12 @@ module.exports = (sequelize, DataTypes) => {
                 onDelete: "CASCADE",
                 onUpdate: "CASCADE",
             });
-
-            // A session belongs to ONE Customer (if logged in as customer)
-            this.belongsTo(models.Customer, {
-                foreignKey: "customerId",
-                as: "customer",
-                onDelete: "CASCADE",
-                onUpdate: "CASCADE",
-            });
         }
     }
 
     UserSession.init({
         userId: {
-            type: DataTypes.INTEGER,
-            allowNull: true
-        },
-        customerId: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.BIGINT,
             allowNull: true
         },
         accessToken: {

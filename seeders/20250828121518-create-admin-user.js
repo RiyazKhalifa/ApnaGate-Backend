@@ -8,13 +8,14 @@ module.exports = {
 
         const [role] = await Role.findOrCreate({
             where: { name: "Super Admin" },
-            defaults: { name: "Super Admin", name_ar: "المشرف العام" }
+            defaults: { id: 1, name: "Super Admin", name_ar: "المشرف العام" }
         });
 
         const [user] = await User.findOrCreate({
             where: { email: "excellentwebworld@gmail.com" },
             defaults: {
-                name: "Admin",
+                id: 1,
+                name: "Super Admin",
                 email: "excellentwebworld@gmail.com",
                 password: passwordHash,
                 status: "active",

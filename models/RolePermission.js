@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
 
     RolePermission.init({
         roleId: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.BIGINT,
             allowNull: false,
             references: {
                 model: "roles",
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
             onUpdate: 'CASCADE',
         },
         permissionId: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.BIGINT,
             allowNull: false,
             references: {
                 model: "permissions",
