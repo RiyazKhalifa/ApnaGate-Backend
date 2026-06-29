@@ -1,9 +1,9 @@
-const express = require("express");
-const FlatController = require("../controllers/FlatController");
-const FlatValidator = require("../validators/FlatValidator");
-const authMiddleware = require("../middlewares/AuthMiddleware");
-const checkPermission = require("../middlewares/PermissionMiddleware");
-const validateRequest = require("../middlewares/ValidateRequest");
+const express = require('express');
+const FlatController = require('../../controllers/FlatController');
+const FlatValidator = require('../../validators/FlatValidator');
+const authMiddleware = require('../../middlewares/AuthMiddleware');
+const checkPermission = require('../../middlewares/PermissionMiddleware');
+const validateRequest = require('../../middlewares/ValidateRequest');
 
 const router = express.Router();
 

@@ -1,10 +1,10 @@
-const express = require("express");
-const ProfileController = require("../controllers/ProfileController");
-const ProfileValidator = require("../validators/ProfileValidator");
-const authMiddleware = require("../middlewares/AuthMiddleware");
-const checkPermission = require("../middlewares/PermissionMiddleware");
-const validateRequest = require("../middlewares/ValidateRequest");
-const { makeUploader } = require("../utils/UploadUtils");
+const express = require('express');
+const ProfileController = require('../../controllers/ProfileController');
+const ProfileValidator = require('../../validators/ProfileValidator');
+const authMiddleware = require('../../middlewares/AuthMiddleware');
+const checkPermission = require('../../middlewares/PermissionMiddleware');
+const validateRequest = require('../../middlewares/ValidateRequest');
+const { makeUploader } = require('../../utils/UploadUtils');
 
 const router = express.Router();
 const userUpload = makeUploader("users");

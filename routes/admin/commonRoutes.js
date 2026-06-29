@@ -1,9 +1,9 @@
-const express = require("express");
-const CommonController = require("../controllers/CommonController");
-const CommonValidator = require("../validators/CommonValidator");
-const authMiddleware = require("../middlewares/AuthMiddleware");
-const checkPermission = require("../middlewares/PermissionMiddleware");
-const validateRequest = require("../middlewares/ValidateRequest");
+const express = require('express');
+const CommonController = require('../../controllers/CommonController');
+const CommonValidator = require('../../validators/CommonValidator');
+const authMiddleware = require('../../middlewares/AuthMiddleware');
+const checkPermission = require('../../middlewares/PermissionMiddleware');
+const validateRequest = require('../../middlewares/ValidateRequest');
 
 const router = express.Router();
 router.use(authMiddleware);

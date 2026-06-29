@@ -1,9 +1,9 @@
-const express = require("express");
-const BlockController = require("../controllers/BlockController");
-const BlockValidator = require("../validators/BlockValidator");
-const authMiddleware = require("../middlewares/AuthMiddleware");
-const checkPermission = require("../middlewares/PermissionMiddleware");
-const validateRequest = require("../middlewares/ValidateRequest");
+const express = require('express');
+const BlockController = require('../../controllers/BlockController');
+const BlockValidator = require('../../validators/BlockValidator');
+const authMiddleware = require('../../middlewares/AuthMiddleware');
+const checkPermission = require('../../middlewares/PermissionMiddleware');
+const validateRequest = require('../../middlewares/ValidateRequest');
 
 const router = express.Router();
 

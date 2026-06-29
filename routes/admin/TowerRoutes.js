@@ -1,9 +1,9 @@
-const express = require("express");
-const TowerController = require("../controllers/TowerController");
-const TowerValidator = require("../validators/TowerValidator");
-const authMiddleware = require("../middlewares/AuthMiddleware");
-const checkPermission = require("../middlewares/PermissionMiddleware");
-const validateRequest = require("../middlewares/ValidateRequest");
+const express = require('express');
+const TowerController = require('../../controllers/TowerController');
+const TowerValidator = require('../../validators/TowerValidator');
+const authMiddleware = require('../../middlewares/AuthMiddleware');
+const checkPermission = require('../../middlewares/PermissionMiddleware');
+const validateRequest = require('../../middlewares/ValidateRequest');
 
 const router = express.Router();
 

@@ -1,8 +1,8 @@
-const express = require("express");
-const authMiddleware = require("../middlewares/AuthMiddleware");
-const checkPermission = require("../middlewares/PermissionMiddleware");
-const validateRequest = require("../middlewares/ValidateRequest");
-const appTranslationController = require("../controllers/AppTranslationController");
+const express = require('express');
+const authMiddleware = require('../../middlewares/AuthMiddleware');
+const checkPermission = require('../../middlewares/PermissionMiddleware');
+const validateRequest = require('../../middlewares/ValidateRequest');
+const appTranslationController = require('../../controllers/AppTranslationController');
 
 const router = express.Router();
 

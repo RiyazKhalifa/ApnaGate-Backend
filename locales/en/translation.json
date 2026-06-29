@@ -72,11 +72,19 @@
         "invalid_type": "Invalid notification type",
         "society_id_required": "Society ID is required",
         "description_must_be_string": "Description must be a string",
-        "invalid_permission_keys": "Invalid permission keys"
+        "invalid_permission_keys": "Invalid permission keys",
+        "society_required": "Society is required",
+        "society_invalid": "Society ID must be an integer",
+        "flat_required": "Flat is required",
+        "flat_invalid": "Flat ID must be an integer",
+        "resident_type_required": "Resident type is required",
+        "resident_type_invalid": "Resident type must be owner or tenant",
+        "move_in_date_required": "Move in date is required"
     },
     "messages": {
         "login_success": "Login successful",
         "logout_success": "Logged out successfully",
+        "register_success": "Resident registered successfully",
         "force_logout_success": "Session logged out successfully",
         "access_token_generated": "Access token generated successfully",
         "refresh_token_generated": "Refresh token generated successfully",
@@ -185,6 +193,9 @@
         "parking_slots_must_be_non_negative": "Parking slots must be non-negative",
         "block_id_required": "Block ID is required",
         "tower_id_required": "Tower ID is required",
-        "floor_id_required": "Floor ID is required"
+        "floor_id_required": "Floor ID is required",
+        "email_already_taken": "Email is already taken",
+        "not_authorized_as_resident": "You are not registered as a resident",
+        "resident_account_inactive": "Your resident account is inactive"
     }
 }

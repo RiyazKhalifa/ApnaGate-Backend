@@ -1,9 +1,9 @@
-const express = require("express");
-const FloorController = require("../controllers/FloorController");
-const FloorValidator = require("../validators/FloorValidator");
-const authMiddleware = require("../middlewares/AuthMiddleware");
-const checkPermission = require("../middlewares/PermissionMiddleware");
-const validateRequest = require("../middlewares/ValidateRequest");
+const express = require('express');
+const FloorController = require('../../controllers/FloorController');
+const FloorValidator = require('../../validators/FloorValidator');
+const authMiddleware = require('../../middlewares/AuthMiddleware');
+const checkPermission = require('../../middlewares/PermissionMiddleware');
+const validateRequest = require('../../middlewares/ValidateRequest');
 
 const router = express.Router();
 

@@ -3,12 +3,13 @@ require("@dotenvx/dotenvx").config();
 process.env.TZ = process.env.TIMEZONE || 'Asia/Kolkata';
 const express = require("express");
 const cors = require("cors");
-const routes = require("./routes");
 const errorHandler = require("./middlewares/ErrorHandler");
 const responseHandler = require("./middlewares/ResponseHandler");
 const { logReqRes } = require("./middlewares/LogsMiddleware");
 const { i18next, middleware } = require("./config/i18n");
 const path = require("path");
+const adminRoutes = require("./routes/admin");
+const residentRoutes = require("./routes/resident");
 
 const app = express();
 
@@ -28,7 +29,8 @@ app.use(cors({
 }));
 
 // Routes
-app.use("/api/admin", routes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/resident", residentRoutes);
 
 app.get("/", (req, res) => res.send("Welcome to the Excellent WebWorld API"));
 

@@ -69,10 +69,18 @@
         "app_settings_must_be_object": "يجب أن تكون إعدادات التطبيق كائنًا",
         "society_id_required": "معرف الجمعية مطلوب",
         "description_must_be_string": "يجب أن يكون الوصف نصاً",
-        "invalid_permission_keys": "مفاتيح الصلاحيات غير صالحة"
+        "invalid_permission_keys": "مفاتيح الصلاحيات غير صالحة",
+        "society_required": "الجمعية مطلوبة",
+        "society_invalid": "يجب أن يكون معرف الجمعية عددًا صحيحًا",
+        "flat_required": "الشقة مطلوبة",
+        "flat_invalid": "يجب أن يكون معرف الشقة عددًا صحيحًا",
+        "resident_type_required": "نوع المقيم مطلوب",
+        "resident_type_invalid": "يجب أن يكون نوع المقيم مالك أو مستأجر",
+        "move_in_date_required": "تاريخ الانتقال مطلوب"
     },
     "messages": {
         "login_success": "تم تسجيل الدخول بنجاح",
+        "register_success": "تم تسجيل المقيم بنجاح",
         "logout_success": "تم تسجيل الخروج بنجاح",
         "force_logout_success": "تم تسجيل خروج الجلسة بنجاح",
         "access_token_generated": "تم إنشاء رمز الوصول بنجاح",
@@ -178,6 +186,9 @@
         "parking_slots_must_be_non_negative": "يجب ألا يكون عدد مواقف السيارات سالبًا",
         "block_id_required": "معرف البلوك مطلوب",
         "tower_id_required": "معرف البرج مطلوب",
-        "floor_id_required": "معرف الطابق مطلوب"
+        "floor_id_required": "معرف الطابق مطلوب",
+        "email_already_taken": "البريد الإلكتروني مأخوذ بالفعل",
+        "not_authorized_as_resident": "أنت غير مسجل كمقيم",
+        "resident_account_inactive": "حساب المقيم الخاص بك غير نشط"
     }
 }
